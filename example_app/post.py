@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List, Optional
 
@@ -6,6 +7,8 @@ from typing import List, Optional
 
 # instance of fastapi
 app = FastAPI()
+
+app.mount("/static_test", StaticFiles(directory="static"), name="static_test")
 
 class Item(BaseModel):
     name: str
