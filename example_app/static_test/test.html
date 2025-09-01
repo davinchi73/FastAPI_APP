@@ -4,8 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test app</title>
+
+    <!-- Links to stylesheet -->
+    <link rel="stylesheet" href="/static_test/test.css">
 </head>
 <body>
-    
+
+    <header class="main_header">
+        <h1>This is an example application using FastAPI, HTML, CSS, and JS</h1>
+        <p>Practicing FastAPI Post requests</p>
+    </header>
+
+    <!-- Item form here -->
+    <section class="form-section">
+        <h2>Create New Item</h2>
+        <form id="itemForm" class="item-form">
+            <div class="form-group">
+                <label for="name">Item Name</label>
+                <input type="text" id="name" name="name" required 
+                        placeholder="Enter item name">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="price">Price ($)</label>
+                    <input type="number" id="price" name="price" 
+                            step="0.01" min="0" required 
+                            placeholder="0.00">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Choose category</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="books">Books</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="food">Food & Drinks</option>
+                        <option value="home">Home & Garden</option>
+                        <option value="sports">Sports</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description (Optional)</label>
+                <textarea id="description" name="description" 
+                            placeholder="Add a description for your item..."
+                            rows="3"></textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">
+                    Create Item
+                </button>
+                <button type="button" class="btn btn-secondary" 
+                        onclick="loadItems()">
+                    Refresh Items
+                </button>
+                <button type="reset" class="btn btn-outline">
+                    Clear Form
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>Built with FastAPI + Vanilla JS</p>
+    </footer>
+
+    <script src="/static_test/test.js"></script>
 </body>
 </html>
